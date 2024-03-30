@@ -307,7 +307,11 @@ public class fibonacci {
     public static void main(String[] args) {
 
         String str = "(()())(())";
+
+        int dp [] = new int[5];
         System.out.println(removeOuterParenthesess(str));
+        System.out.println(fibo(5, dp));
+
 
     }
 

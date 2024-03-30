@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class linkedlist {
@@ -193,31 +195,76 @@ public class linkedlist {
         return prev;
     }
 
-    public static void main(String[] args) {
-        linkedlist mm = new linkedlist();
-        LinkedList<Integer> xx = new LinkedList<>();
-        mm.addfirst(1);
-        mm.addfirst(6);
-        mm.addfirst(5);
-        mm.addfirst(3);
-
-        mm.addfirst(9);
-        //   mm.addfirst(8);
-        mm.print();
-        mm.head = mm.mergesort(mm.head);
-        mm.print();
-
-        LinkedList<Integer> ll = new LinkedList<>();
-
-        head = new Node(1);
-        head.next = new Node(1);
-        head.next.next = new Node(2);
-        head.next.next.next = new Node(1);
-
-        System.out.println(isPalindrome(head));
-
+//    public static void main(String[] args) {
+//        linkedlist mm = new linkedlist();
+//        LinkedList<Integer> xx = new LinkedList<>();
+//        mm.addfirst(1);
+//        mm.addfirst(6);
+//        mm.addfirst(5);
+//        mm.addfirst(3);
+//
+//        mm.addfirst(9);
+//        //   mm.addfirst(8);
+//        mm.print();
+//        mm.head = mm.mergesort(mm.head);
+//        mm.print();
+//
+//        LinkedList<Integer> ll = new LinkedList<>();
+//
+//        head = new Node(1);
+//        head.next = new Node(1);
+//        head.next.next = new Node(2);
+//        head.next.next.next = new Node(1);
+//
+//        System.out.println(isPalindrome(head));
+//
+//    }
+    public int minOperation(int n)
+    {
+        //code here.
+        int i = 0;
+        int j = 0;
+        while(i <= n){
+            if(i == 0){
+                i++;
+            }
+            if ((i*i)<n) {
+                i = i*i;
+            } else {
+                i++;
+            }
+            j++;
+        }
+        return j;
     }
-}
+    void pushZerosToEnd(int[] arr, int n) {
+        // code here
+        int x=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]!=0)
+            {
+                arr[x++]=arr[i];
+            }
+        }
+        for(int i=x;i<n;i++)
+            arr[i]=0;
+    }
+    public static int se(ArrayList<Integer> intArr){
+        
+        Collections.sort(intArr);
+        return (intArr.get(intArr.size()-2));
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(3);
+        arr.add(5);
+        arr.add(1);
+        System.out.println(se(arr));
+    }
+    }
+
 //    public static Node modifyTheList(Node head)
 //    {
 //        Node temp = head;

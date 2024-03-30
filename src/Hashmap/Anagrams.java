@@ -22,8 +22,9 @@ public class Anagrams {
     public static void main(String[] args) {
         int []arr = {1,2,3,4,5};
         int temp [] = arr;
-        System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(temp));
+        String x = "poet";
+        String y = "toep";
+        System.out.println(anagram(x,y));
         
     }
     public static boolean anagram(String x, String y){
