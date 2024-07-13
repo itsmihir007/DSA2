@@ -4,14 +4,18 @@ import java.util.LinkedList;
 public class LL {
     //formation of a single node
 
-    public static class Node {
+    public static class Node{
         int data;
         Node next;
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
+        public  Node(int data, Node next){
+            data = this.data;
+            next = this.next;
         }
+        public Node( int data){
+            data = this.data;
+        }
+
     }
 
     public static void addfirst(int data) {
@@ -117,38 +121,20 @@ public class LL {
     public static Node findmid(Node head) {
         Node slow = head;
         Node fast = head;
-        while (fast != null && fast.next != null) {
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow;
     }
 
-    public static boolean ispalindrome() {
-        if (head == null && head.next == null) {
-            return true;
-        }
-        Node midnode = findmid(head);
-        Node prev = null;
-        Node curr = midnode;
-        Node next;
-        while (curr != null) {
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-        }
-        Node right = prev;
-        Node left = head;
-        while (right != null) {
-            if (left.data != right.data) {
-                return false;
-            }
-            right = right.next;
-            left = left.next;
-        }
-        return true;
-    }
+//    public static boolean ispalindrome() {
+//        if(head == null && head.next == null){
+//            return true;
+//        }
+//        Node curr = findmid(head);
+//        Node
+//    }
 
     public static void deletefromnthindex(int n) {
         int siz = 0;

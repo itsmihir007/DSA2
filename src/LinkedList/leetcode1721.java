@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.List;
+
 public class leetcode1721 {
 
 
@@ -19,6 +21,14 @@ public class leetcode1721 {
             this.next = next;
         }
     }
+
+//    public ListNode mergeNodes(ListNode head) {
+//        if(head == null || head.next == null){
+//            return head;
+//        }
+//        ListNode temp = head;
+//        while
+//    }
     public ListNode swapNodes(ListNode head, int k) {
       ListNode first = head,second = head, fast = head, slow = head;
         for (int i = 0; i < k-1 ; ++i) {

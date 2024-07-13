@@ -304,16 +304,16 @@ public class fibonacci {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-
-        String str = "(()())(())";
-
-        int dp [] = new int[5];
-        System.out.println(removeOuterParenthesess(str));
-        System.out.println(fibo(5, dp));
-
-
-    }
+//    public static void main(String[] args) {
+//
+//        String str = "(()())(())";
+//
+//        int dp [] = new int[5];
+//        System.out.println(removeOuterParenthesess(str));
+//        System.out.println(fibo(5, dp));
+//
+//
+//    }
 
     public String removeOuterParentheses(String s) {
         Stack<Character> stack = new Stack<>();
@@ -385,6 +385,69 @@ public class fibonacci {
             return true;
         }
         return false;
+    }
+//    public String reverseWords(String s) {
+//        // The word is a puzzle
+//        // puzzle a is word the
+//        char [] ch = s.toCharArray();
+//        char [] ans = new char[ch.length];
+//        for(int i = ch.length; i > 0 ; i--){
+//            ans[i] = ch[i];
+//        }
+//    }
+
+    public static int maxArea(int[] height) {
+        int n = height.length;
+        int left = 0 ;
+        int right = n - 1;
+        int ans =0;
+        int maxarea = 0;
+        while(left < right){
+            maxarea = (Math.min(height[left],height[right]) * (right - left));
+            ans = Math.max(ans,maxarea);
+            if(height[left] < height[right]){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int height[] = {1,8,6,2,5,4,8,3,7};
+        System.out.println(maxArea(height));
+    }
+
+    public int largestAltitude(int[] gain) {
+        int n = gain.length;
+        int ans = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = 0; i < gain.length; i++) {
+            sum+=gain[i];
+            ans = Math.max(ans, sum);
+        }
+        if(ans < 0){
+            return 0;
+        }
+        return ans;
+    }
+
+    public int pivotIndex(int[] nums) {
+        int total =0;
+        for(int i : nums){
+           total += nums[i];
+        }
+        int lefttotal = 0;
+        for (int i = 0; i < nums.length; i++) {
+             int righttotal = total - lefttotal - nums[i];
+             if(righttotal == lefttotal){
+                 return i;
+             }
+             lefttotal += nums[i];
+        }
+return -1;
     }
 }
 
