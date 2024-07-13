@@ -184,6 +184,18 @@ public class pattern {
         }
     }
     public static void main(String[] args) {
-        pat13(5);
+
+        pat1(5);
+        pat2(5);
+        pat3(5);
+        pat4(5);
+        pat5(5);
+        pat6(5);
+        pat7(5);
+        pat8(5);
+        pat9(5);
+        pat10(5);
+        pat11(5);
+
     }
 }

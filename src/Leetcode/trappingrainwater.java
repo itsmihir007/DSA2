@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class trappingrainwater {
 //    static long trappingWater(int arr[], int n) {
-//        // Your code here
+        // Your code here
 //        ArrayList<Integer> lsr = new ArrayList<>();
 //        Stack<Integer> stack = new Stack<>();
 //        for (int i = 0; i < arr.length-1; i++) {
@@ -24,6 +24,7 @@ public class trappingrainwater {
 //            }
 //
 //        }
+
 //    }
 int isPalindrome(String S) {
     // code here
