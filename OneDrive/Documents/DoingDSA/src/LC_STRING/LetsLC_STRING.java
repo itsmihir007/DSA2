@@ -6,8 +6,8 @@ import java.util.HashSet;
 public class LetsLC_STRING {
     public static void main(String[] args) {
 
-        String s = "add";
-        String t = "egg";
+        String s = "abcde";
+        String t = "abced";
         System.out.println(isIsomorphic1(s,t));
     }
 
@@ -68,4 +68,32 @@ public class LetsLC_STRING {
         }
         return true;
     }
+    public boolean rotateString(String s, String goal) {
+        return (s.length() == goal.length()) && (s+s).contains(goal);
+    }
+
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()){
+            return false;
+        }
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(char ch : s.toCharArray()){
+            map.put(ch,map.getOrDefault(ch,0)+1);
+        }
+        for (int i = 0; i < t.length(); ++i) {
+            char ch = t.charAt(i);
+            if(map.containsKey(ch)){
+                map.put(ch,map.get(ch)-1);
+                if(map.get(ch) == 0){
+                    map.remove(ch);
+                }
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }
